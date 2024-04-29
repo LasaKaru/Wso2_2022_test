@@ -4,8 +4,116 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h1 class="display-4">test publish for choreo wso2</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background: linear-gradient(to bottom, #ddf5e2,#ddf5f2, #ddf5e2, #ddf5e2, #ddf5e2, #132); /* Gradient from light green to darker green */ /* Calm low green color */
+        /* Uncomment the following lines to use gradient background instead */
+        /* background: linear-gradient(to bottom, #c8e6c9, #f0fff0); */
+
+
+    }
+    .hader{
+        background: linear-gradient(to bottom, #f5e0df,#577694, #131342);
+    }
+    /* Additional styles for the Asgardeo login button */
+    .asgardeo-button {
+        width: 150px;
+        height: 50px;
+        background-color: #132; /* Low red color */
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .asgardeo-button:hover {
+            background-color: #DDF5E2; /* Darker red color on hover */
+        }
+</style>
+
+<div class="container">
+
+    <div class="row justify-content-center mt-5">
+        <!-- Left side for images -->
+        <div class="col-md-6 text-center" style="width: 500px; height: 500px;">
+            
+            <div id="slideshow" class="card" style="width: 500px; height: 500px;">
+                <img src="~/img/change1.gif" class="card-img-top" style="width: 500px; height: 500px;" >
+                <img src="~/img/Earth.gif" class="card-img-top" style="width: 500px; height: 500px;" >
+                <img src="~/img/Forest.gif" class="card-img-top" style="width: 500px; height: 500px;" >
+                 <!-- Add more images as needed -->
+                <div class="card-body">
+                    <!-- You can remove or modify the card body content if not needed 
+                    <h5 class="card-title">Image Title</h5>
+                    <p class="card-text">Description of the image goes here.</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side for other details -->
+        <div class="col-md-6 text-center">
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1 class="display-4"><b>Welcome Back,</b></h1>
+            <br />
+            <h2 class="display-8">Environmental Sustainability Tracking and Reporting Platform</h2>
+            <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <!-- Add the Asgardeo login button here -->
+            <br />
+            <button class="asgardeo-button" onclick="location.href='https://myaccount.asgardeo.io/t/googlex'" style="width: 200px; height: 40px;">Login with Asgardeo</button>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    
+    <div class="platform-info">
+        <h2 class="display-8">Introduction</h2>
+        <p>
+            The platform aims to revolutionize the way individuals and organizations engage with environmental sustainability. It provides users with a comprehensive toolkit to track, analyze, and improve their environmental impact, fostering a more sustainable and eco-conscious society!
+        </p>
+        <br />
+        <h2 class="display-8">Mission</h2>
+        <p>
+            Our mission is to empower individuals and organizations worldwide to make informed decisions and take meaningful actions towards a more sustainable future. By harnessing the power of technology and community collaboration, we strive to create positive environmental change and protect our planet for future generations!
+        </p>
+        <ul>
+            <li>Comprehensive Environmental Tracking</li>
+            <li>Goal Setting and Progress Tracking</li>
+            <li>Community Engagement</li>
+            <li>Gamification and Rewards</li>
+            <li>Actionable Insights and Recommendations</li>
+            <li>Partnerships and Integration</li>
+        </ul>
+        <button class="btn btn-primary" onclick="location.href='/register'" style="width: 200px; height: 40px;">Register Now</button>
+        <button class="btn btn-secondary" onclick="location.href='/login'" style="width: 200px; height: 40px;">Log In</button>
+    </div>
+
 </div>
+
+</div>
+
+<script>
+    var index = 1;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.querySelectorAll("#slideshow img");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        index++;
+        if (index > slides.length) { index = 1 }
+        slides[index - 1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+</script>
+
+
